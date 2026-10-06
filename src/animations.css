@@ -1,0 +1,135 @@
+/* ===================== Global animations ===================== */
+
+html { scroll-behavior: smooth; }
+
+body { transition: background-color 0.35s ease, color 0.35s ease; }
+
+/* Scroll reveal (see hooks/useReveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Page entrance */
+.home-page,
+.product-detail-page-wrapper,
+.cart-page,
+.search-page,
+.auth-page-wrapper,
+.confirm-page-wrapper {
+  animation: page-in 0.5s ease both;
+}
+
+@keyframes page-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Hero */
+.hero-title { animation: slide-up 0.8s cubic-bezier(0.2, 1, 0.3, 1) both; }
+.hero-description { animation: slide-up 0.8s cubic-bezier(0.2, 1, 0.3, 1) 0.12s both; }
+
+.hero-button {
+  animation: slide-up 0.7s cubic-bezier(0.2, 1, 0.3, 1) both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero-button:nth-child(1) { animation-delay: 0.25s; }
+.hero-button:nth-child(2) { animation-delay: 0.35s; }
+.hero-button:nth-child(3) { animation-delay: 0.45s; }
+.hero-button:hover { transform: translateY(-5px) scale(1.02); }
+
+.hero-rocket { display: inline-block; animation: rocket-float 3s ease-in-out infinite; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rocket-float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(6px, -10px) rotate(6deg); }
+}
+
+/* Categories */
+.category-button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.category-button:hover { transform: translateY(-4px); }
+.category-button:active { transform: scale(0.96); }
+
+.category-icon { transition: transform 0.3s ease; }
+.category-button:hover .category-icon { transform: rotate(-10deg) scale(1.15); }
+
+/* Product cards */
+.product-card {
+  transition: opacity 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card.is-visible:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 44px rgba(75, 149, 137, 0.2);
+}
+
+.product-image { transition: transform 0.45s ease; }
+.product-card:hover .product-image { transform: scale(1.08) rotate(-1.5deg); }
+
+.product-cart-button { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.product-cart-button:hover { transform: translateY(-2px); }
+.product-cart-button:active { transform: scale(0.95); }
+
+.cheapest-price { animation: price-glow 2.4s ease-in-out infinite; }
+
+@keyframes price-glow {
+  50% { text-shadow: 0 0 12px rgba(16, 185, 129, 0.55); }
+}
+
+/* Product detail */
+.product-detail-image { transition: transform 0.5s ease; }
+.product-detail-image-box:hover .product-detail-image { transform: scale(1.06); }
+
+.similar-product-card {
+  transition: opacity 0.6s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.similar-product-card.is-visible:hover { transform: translateY(-6px); }
+
+.best-price-save {
+  margin-top: 6px;
+  font-weight: 700;
+  color: #059669;
+  animation: slide-up 0.6s ease 0.3s both;
+}
+
+.detail-price-cheapest .best-badge { animation: badge-pulse 2s ease-in-out infinite; }
+
+@keyframes badge-pulse {
+  50% { transform: scale(1.08); }
+}
+
+/* Buttons, links and navbar */
+.navbar-link { transition: transform 0.2s ease, background-color 0.2s ease; }
+.navbar-link:hover { transform: translateY(-2px); }
+
+.theme-button { transition: transform 0.4s ease; }
+.theme-button:hover { transform: rotate(25deg) scale(1.1); }
+
+.logo-top { display: inline-block; transition: transform 0.3s ease; }
+.navbar-logo:hover .logo-top { transform: rotate(-6deg) scale(1.1); }
+
+.footer-link { transition: transform 0.2s ease, color 0.2s ease; }
+.footer-link:hover { transform: translateX(5px); }
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

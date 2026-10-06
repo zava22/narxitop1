@@ -1,0 +1,436 @@
+/* =========================================
+   NARXTOP HERO
+   ========================================= */
+
+.hero-section {
+  width: 100%;
+  padding: 38px 0 48px;
+
+  background:
+    radial-gradient(
+      circle at 12% 35%,
+      rgba(218, 102, 67, 0.045) 0,
+      rgba(218, 102, 67, 0.045) 7px,
+      transparent 8px
+    ),
+    radial-gradient(
+      circle at 87% 65%,
+      rgba(66, 151, 137, 0.04) 0,
+      rgba(66, 151, 137, 0.04) 8px,
+      transparent 9px
+    ),
+    #fffaf5;
+}
+
+
+/* =========================================
+   HERO CONTAINER
+   ========================================= */
+
+.hero-container {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 435px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(190, 156, 138, 0.22);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 239, 236, 0.97) 0%,
+      rgba(255, 249, 247, 0.98) 47%,
+      rgba(233, 248, 245, 0.96) 100%
+    );
+
+  box-shadow:
+    0 10px 35px rgba(111, 75, 58, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   DECORATIVE CIRCLES
+   ========================================= */
+
+.hero-container::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  left: -110px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(227, 110, 78, 0.035);
+}
+
+.hero-container::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -120px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(71, 153, 138, 0.045);
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.hero-content {
+  width: 100%;
+
+  position: relative;
+  z-index: 2;
+
+  padding: 55px 30px 48px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.hero-title {
+  margin: 0;
+
+  color: #c2533c;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(38px, 4.4vw, 64px);
+  font-weight: 700;
+
+  line-height: 1.13;
+
+  letter-spacing: -1.8px;
+}
+
+.hero-rocket {
+  display: inline-flex;
+
+  width: 38px;
+  height: 38px;
+
+  margin-left: 8px;
+
+  vertical-align: middle;
+
+  transform: translateY(-2px) rotate(-8deg);
+}
+
+.hero-rocket svg {
+  width: 100%;
+  height: 100%;
+
+  fill: none;
+  stroke: #c2533c;
+
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.hero-description {
+  margin: 26px auto 0;
+
+  max-width: 770px;
+
+  color: #454545;
+
+  font-size: 17px;
+  line-height: 1.62;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+   ========================================= */
+
+.hero-actions {
+  margin-top: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+}
+
+.hero-button {
+  min-height: 53px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(205, 196, 190, 0.38);
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #252525;
+
+  box-shadow:
+    0 5px 18px rgba(87, 72, 63, 0.06),
+    0 1px 2px rgba(87, 72, 63, 0.04);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  border-color: rgba(205, 196, 190, 0.65);
+
+  box-shadow:
+    0 9px 24px rgba(87, 72, 63, 0.10),
+    0 2px 4px rgba(87, 72, 63, 0.05);
+}
+
+.hero-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   HERO BUTTON ICON
+   ========================================= */
+
+.hero-button-icon {
+  width: 21px;
+  height: 21px;
+
+  flex: 0 0 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #2e6f68;
+}
+
+.hero-button-icon svg {
+  width: 20px;
+  height: 20px;
+
+  display: block;
+
+  fill: none;
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================
+   FIRST BUTTON
+   ========================================= */
+
+.hero-button:first-child .hero-button-icon {
+  color: #3b8c80;
+}
+
+
+/* =========================================
+   CART BUTTON
+   ========================================= */
+
+.hero-button:nth-child(2) .hero-button-icon {
+  color: #3b8c80;
+}
+
+
+/* =========================================
+   DISCOUNT BUTTON
+   ========================================= */
+
+.hero-button:nth-child(3) .hero-button-icon {
+  color: #c2533c;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .hero-section {
+    padding-top: 28px;
+  }
+
+  .hero-container {
+    min-height: 400px;
+  }
+
+  .hero-content {
+    padding: 48px 25px;
+  }
+
+  .hero-title {
+    font-size: 46px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-button {
+    min-height: 49px;
+    padding: 0 20px;
+  }
+
+  .hero-rocket {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .hero-section {
+    padding: 18px 0 30px;
+  }
+
+  .hero-container {
+    width: calc(100% - 24px);
+
+    min-height: auto;
+
+    border-radius: 22px;
+  }
+
+  .hero-content {
+    padding: 45px 18px 40px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 1.18;
+    letter-spacing: -1px;
+  }
+
+  .hero-rocket {
+    width: 27px;
+    height: 27px;
+
+    margin-left: 5px;
+  }
+
+  .hero-description {
+    margin-top: 21px;
+
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-description br {
+    display: none;
+  }
+
+  .hero-actions {
+    margin-top: 28px;
+
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .hero-button {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 18px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 420px) {
+
+  .hero-title {
+    font-size: 31px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-content {
+    padding: 38px 15px 34px;
+  }
+
+  .hero-button {
+    min-height: 48px;
+  }
+}
